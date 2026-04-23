@@ -17,7 +17,7 @@ x = data.iloc[:, [3, 4]].values
 wcss = []
 
 for i in range(1, 11):
-    kmeans = KMeans(n_clusters=i, init='k-means++', random_state=42)
+    kmeans = KMeans(n_clusters=i, init='k-means++', random_state=64)
     kmeans.fit(x)
     wcss.append(kmeans.inertia_)
 
@@ -29,7 +29,7 @@ plt.ylabel("WCSS")
 plt.show()
 
 # Apply KMeans (choose k=5 based on elbow)
-kmeans = KMeans(n_clusters=5, init='k-means++', random_state=42)
+kmeans = KMeans(n_clusters=5, init='k-means++', random_state=64)
 y_kmeans = kmeans.fit_predict(x)
 
 # Visualizing clusters
